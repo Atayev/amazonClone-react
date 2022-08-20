@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 function Header() {
 
     const state = useSelector(state => state.basket)
-    console.log(state)
+    console.log(state.user)
   return (
     <div className="header">
           <Link to='/'>
@@ -18,10 +18,12 @@ function Header() {
                 <SearchIcon className='header-searchIcon'/>
             </div>
             <div className="header-nav">
-                <div className="header-option">
-                    <span className="header-fline">Hello Guest</span>
-                    <span className="header-sline">Sign IN</span>
-                    </div>
+            <Link to='/login'>
+            <div className="header-option">
+                        <span className="header-fline">Hello Guest</span>
+                        <span className="header-sline">{state.user ? 'Sign out' : 'Sign In'}</span>
+                        </div>
+            </Link>
                 <div className="header-option">
                     <span className="header-fline">Returns</span>
                         <span className="header-sline">Orders</span>

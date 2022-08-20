@@ -2,28 +2,28 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const basketSlice = createSlice({
     name: 'basket',
-    initialState:[],
+    initialState: [{
+        basket:[],
+        user:null,
+    }],
+    user:null,
+    
 	reducers: {
         addToBasket: (state, action) => {
             console.log(action)
-            const basketItem = {
-                id:action.payload.id,
-                title:action.payload.title,
-                image:action.payload.image,
-                price:action.payload.price,
-                rating:action.payload.rating
-            }
-            state.push(basketItem)
+            return state.push(action.payload)
+            
         },
         removeFromBasket: (state, action) => {
-            const basketItem = {
-                id:action.payload.id,
-            }
-            state.pop(basketItem)
+                return state.basket.filter((basket) => basket.id !== action.payload.id);
+        },
+        setUser: (state, action) => {
+            return state.user.push(action.payload.user)
+        }
 		},
 
 	},
-});
+);
 
-export  const {addToBasket,removeFromBasket} = basketSlice.actions
+export  const {addToBasket,removeFromBasket,setUser} = basketSlice.actions
 export default basketSlice.reducer;

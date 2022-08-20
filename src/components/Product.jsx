@@ -8,13 +8,15 @@ function Product({ id, title, image, price, rating }) {
   const addTo = () => {
     dispatch(
       
-      addToBasket({
-      id: id,
-      title: title,
-      image: image,
-      price: JSON.stringify(price),
-      rating: JSON.stringify(rating)
-      
+      addToBasket(
+        {
+          basket: [
+            id,
+            title,
+            image,
+            JSON.stringify(price),
+            JSON.stringify(rating),
+          ],
     }))
   }
   return (

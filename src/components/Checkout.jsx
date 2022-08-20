@@ -12,7 +12,7 @@ function Checkout() {
               <img src="https://m.media-amazon.com/images/G/01/AdProductsWebsite/images/AUX/firetv_inline__mebeforeyou._TTW_.jpg" className='checkoutAd' alt="" />
               <div>
                   <h2 className='checkoutTitle'>Your Shopping Basket</h2>
-                  {basketItem.map(item => {
+                  {basketItem.basket.map(item => {
                       return <CheckoutProduct
                         id= {item.id}
                         title={item.title}
