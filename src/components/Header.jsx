@@ -1,11 +1,18 @@
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import { useSelector } from 'react-redux';
+import {Link} from 'react-router-dom'
 function Header() {
+
+    const state = useSelector(state => state.basket)
+    console.log(state)
   return (
     <div className="header">
-        <img 
+          <Link to='/'>
+          <img 
             className="header-logo"
-            src='http://pngimg.com/uploads/amazon/amazon_PNG11.png' alt="" />
+                  src='http://pngimg.com/uploads/amazon/amazon_PNG11.png' alt="" />
+          </Link>
             <div className="header-search">
                 <input type="text" className="header-searchIn" />
                 <SearchIcon className='header-searchIcon'/>
@@ -23,11 +30,13 @@ function Header() {
                 <span className="header-fline">Yourt</span>
                     <span className="header-sline">Prime</span>
                     </div>
-            </div>
+          </div>
+          <Link to='/checkout'>
           <div className="header-basket">
               <ShoppingBasketIcon />
-              <span className='header-sline header-basketC'>0</span>
-            </div>
+              <span className='header-sline header-basketC'>{state?.length}</span>
+              </div>
+              </Link>
     </div>
   )
 }

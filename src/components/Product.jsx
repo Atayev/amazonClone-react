@@ -1,6 +1,22 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import {addToBasket} from './reducer'
+function Product({ id, title, image, price, rating }) {
+  
+  const dispatch = useDispatch()
 
-function Product({id,title,image,price,rating}) {
+  const addTo = () => {
+    dispatch(
+      
+      addToBasket({
+      id: id,
+      title: title,
+      image: image,
+      price: JSON.stringify(price),
+      rating: JSON.stringify(rating)
+      
+    }))
+  }
   return (
     <div className="product">
     <div className="productInfo">
@@ -21,7 +37,7 @@ function Product({id,title,image,price,rating}) {
 
     <img src={image} alt="" />
 
-    <button>Add to Basket</button>
+    <button onClick={()=>addTo()}>Add to Basket</button>
   </div>)
 }
 
