@@ -30,8 +30,8 @@ function CheckoutProduct({ id, title, image, price, rating }) {
                 <div className="checkoutProductRating">
                     {Array(rating)
                         .fill()
-                        .map((_) => (
-                            <p>*</p>
+                        .map((_,key) => (
+                            <p key={key}>*</p>
                         ))}
                 </div>
                 <button onClick={removeFrom}>Remove from basket</button>

@@ -10,13 +10,14 @@ function Product({ id, title, image, price, rating }) {
       
       addToBasket(
         {
-          basket: [
-            id,
-            title,
-            image,
-            JSON.stringify(price),
-            JSON.stringify(rating),
-          ],
+          basket: {
+            id: id,
+            title: title,
+            image: image,
+            price: JSON.stringify(price),
+            rating: JSON.stringify(rating)
+      
+        }
     }))
   }
   return (
@@ -31,7 +32,7 @@ function Product({ id, title, image, price, rating }) {
           {Array(rating)
             .fill()
             .map((_, i) => (
-             <p>*</p>
+             <p key={i}>*</p>
           ))}
         
       </div>

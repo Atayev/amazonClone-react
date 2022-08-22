@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 function Header() {
 
     const state = useSelector(state => state.basket)
-    console.log(state.user)
+    console.log(state)
   return (
     <div className="header">
           <Link to='/'>
