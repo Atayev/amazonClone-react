@@ -19,9 +19,9 @@ export const basketSlice = createSlice({
             let index=state.findIndex(item=> item.id===action.payload.id)
             state.splice(index,1)
         },
-        setUser: (state, action) => {
+        // setUser: (state, action) => {
             
-        }
+        // }
     }
 });
 
