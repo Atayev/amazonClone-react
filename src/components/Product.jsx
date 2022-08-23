@@ -16,7 +16,6 @@ function Product({ id, title, image, price, rating }) {
             image: image,
             price: JSON.stringify(price),
             rating: JSON.stringify(rating)
-      
         }
     }))
   }

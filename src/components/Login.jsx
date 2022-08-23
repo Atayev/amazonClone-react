@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { auth } from '../firebase'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import  {toast} from 'react-toastify'
+
 function Login() {
     const navigate =useNavigate()
     const [email,setEmail] =useState('')
@@ -11,20 +13,12 @@ function Login() {
         auth
             .signInWithEmailAndPassword(email, password)
             .then(auth => {
+                toast.success('Succsessfully signed in!')
                 navigate('/')
             })
             .catch(error=> alert(error.message))
     }
-    const register = (e) => {
-        e.preventDefault()
-        auth
-            .createUserWithEmailAndPassword(email, password)
-            .then((auth) => { 
-                if(auth) navigate('/')
-            })
-            .catch(error=>alert(error.message))
-                
-    }
+    
   return (
       <div className='login'>
           <Link to='/'>
@@ -46,7 +40,7 @@ function Login() {
               <p>
                   By singing-in you agree to AmazonCLONE Conditions of  Use&Sale. Please see our privacy notice, our cookies notice and our interest based ads notice.
               </p>
-              <button onClick={register} className='loginRegisButton'>Create your Amazon account</button>
+              <button onClick={()=>navigate('/register')} className='loginRegisButton'>Create your Amazon account</button>
           </div>
 
     </div>

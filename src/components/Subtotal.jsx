@@ -7,9 +7,9 @@ function Subtotal() {
   return (
       <div className='subtotal'>
           <>
-        <p>Subtotal ({basketItems.length} items) :
+        <p>Subtotal ({basketItems.basket.length} items) :
           <strong>$
-            {basketItems.reduce((total, item) => Math.round((total + Number(item.price)) * 100) / 100, 0)}</strong></p>
+            {basketItems.basket.reduce((total, item) => Math.round((total + Number(item.price)) * 100) / 100, 0)}</strong></p>
               <small className='subtotalGift'>
                   <input type="checkbox" />
                   This order contains a gift

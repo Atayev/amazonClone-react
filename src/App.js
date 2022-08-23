@@ -8,6 +8,9 @@ import { useEffect } from 'react';
 import { auth } from './firebase'
 import { useDispatch } from 'react-redux'
 import {setUser} from './components/reducer'
+import Register from './components/Register';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
       const dispatch = useDispatch()
 
@@ -37,13 +40,14 @@ function App() {
     <div className="App">
       
           
-       
+       <ToastContainer />
       <Router>
         <Header />
         <Routes>
           <Route path='/checkout' element={<Checkout />} />
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
         </Routes>
       </Router>
     </div>

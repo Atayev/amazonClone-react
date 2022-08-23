@@ -152,7 +152,10 @@ code {
 
 .checkoutAd {
   width: 100%;
-  margin-bottom: 10px;
+  height: 140px;    
+}
+.checkoutRight {
+  margin:0 0 0 10px;
 }
 .checkoutTitle {
   margin-right: 10px;
@@ -222,6 +225,7 @@ code {
   height: auto;
   border-radius: 5px;
 }
+
 .login {
   display: flex;
   flex-direction: column;

@@ -1,6 +1,8 @@
 import React from 'react'
 import { removeFromBasket } from './reducer'
 import { useDispatch } from 'react-redux'
+
+
 function CheckoutProduct({ id, title, image, price, rating }) {
 
     const dispatch = useDispatch()
@@ -36,7 +38,7 @@ function CheckoutProduct({ id, title, image, price, rating }) {
                 </div>
                 <button onClick={removeFrom}>Remove from basket</button>
             </div>
-        </div>
+            </div>
     )
 }
 
