@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux'
-
+import {useNavigate} from 'react-router-dom'
 function Subtotal() {
   const basketItems = useSelector(state => state.basket)
-  
+  const navigate = useNavigate()
   
   return (
       <div className='subtotal'>
@@ -15,7 +15,7 @@ function Subtotal() {
                   This order contains a gift
               </small>
           </>
-          <button>Proceed to checkout</button>
+          <button onClick={e=>navigate('/payment')}>Proceed to checkout</button>
     </div>
   )
 }

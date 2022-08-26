@@ -11,6 +11,11 @@ import {setUser} from './components/reducer'
 import Register from './components/Register';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Payment from './components/Payment';
+import { loadStripe } from '@stripe/stripe-js'
+import { Elements } from '@stripe/react-stripe-js'
+
+const promise = loadStripe("pk_test_51LaomoBX9LWjlI5R7tWZI9DRwjEJQN4IOlB77LU8kIqYpiGQWK1bJJZbV8qdxauxJcH5ImKecW0hPqvDht3DEGap00kB96G7vN");
 function App() {
       const dispatch = useDispatch()
 
@@ -44,10 +49,15 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path='/checkout' element={<Checkout />} />
           <Route path='/' element={<Home />} />
+          <Route path='/checkout' element={<Checkout />}/>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/payment' element={ 
+            <Elements stripe={promise}>
+            <Payment />
+           </Elements>
+          } />
         </Routes>
       </Router>
     </div>

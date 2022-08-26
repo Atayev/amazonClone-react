@@ -1,11 +1,11 @@
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { useSelector,useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {setUser} from './reducer'
 
 function Header() {
-    const navigate = useNavigate()
+   
     const state = useSelector(state => state.basket)
     const dispatch = useDispatch()
     
@@ -38,7 +38,7 @@ function Header() {
           ) :
           (
             <div className="header-option">
-              <span className="header-fline">Hello Guest</span>
+              <span className="header-fline">Hello {!state.user ? 'Guest' : state.user.email}</span>
               <span onClick={logout} className="header-sline">Sign Out</span>
             </div>
           )

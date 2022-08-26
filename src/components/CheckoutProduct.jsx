@@ -4,10 +4,10 @@ import { useDispatch } from 'react-redux'
 
 
 function CheckoutProduct({ id, title, image, price, rating }) {
-
+ 
     const dispatch = useDispatch()
-
     const removeFrom = () => {
+        
         dispatch(
             removeFromBasket({
                 id: id,
@@ -21,7 +21,7 @@ function CheckoutProduct({ id, title, image, price, rating }) {
         
    }
     return (
-        <div className="checkoutProduct">
+        <div className='checkoutProduct'>
             <img className="checkoutProductImage"src={image} alt="" />
             <div className="checkoutProductInfo">
                 <p className="checkoutProductTitle">{title}</p>
