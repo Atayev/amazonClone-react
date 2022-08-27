@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux';
+import { getBasketTotal } from "./reducer";
+import { useSelector, useDispatch } from 'react-redux';
 import CheckoutProduct from './CheckoutProduct';
 import { Link, useNavigate } from 'react-router-dom'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js'
+import {db} from '../firebase'
+import {emptyBasket} from '../components/reducer'
 import axios from '../axios'
 function Payment() {
     const state = useSelector(state => state.basket)
@@ -14,19 +17,19 @@ function Payment() {
     const [succeeded, setSucceeded] = useState(false)
     const [processing, setProcessing] = useState('')
     const [clientSecret, setClientSecret] = useState()
-    
+    const dispatch = useDispatch()
 
     useEffect(() => {
         const getClientSecret = async () => {
             const response = await axios({
                 method: 'post',
-                url:`payments/create?total=${state.basket.reduce((total, item) => Math.round((total + Number(item.price)) * 100), 0)}`
+                url:`payments/create?total=${getBasketTotal(state.basket)*100}`
             })
             setClientSecret(response.data.clientSecret)
+            
         }
         getClientSecret()
     }, [state.basket])
-    console.log(clientSecret)
     const handleSubmit = async( event) => {
         event.preventDefault()
         setProcessing(true)
@@ -35,11 +38,19 @@ function Payment() {
                 card:elements.getElement(CardElement)
             }
         }).then(({ paymentIntent }) => {
+            db.collection('users')
+                .doc(state.user?.uid)
+                .collection('orders')
+                .doc(paymentIntent.id)
+                .set({
+                    basket: state.basket,
+                    amount: paymentIntent.amount,
+                    created:paymentIntent.created
+                })
             setSucceeded(true)
             setError(null)
             setProcessing(false)
-
-            navigate("./orders", { replace: true });
+            navigate("/orders", { replace: true });
         })
 
         // const payload = await stripe 

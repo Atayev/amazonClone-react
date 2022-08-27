@@ -44,8 +44,10 @@ function Header() {
           )
         }
                 <div className="header-option">
-                    <span className="header-fline">Returns</span>
-                        <span className="header-sline">Orders</span>
+          <span className="header-fline">Returns</span>
+              <Link to='/orders' style={{textDecoration:'none', color:'white'}}>
+                <span className="header-sline">Orders</span>
+                </Link>
                     </div>
                 <div className="header-option">
                 <span className="header-fline">Yourt</span>

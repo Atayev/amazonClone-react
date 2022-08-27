@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Payment from './components/Payment';
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
+import Orders from './components/Orders';
 
 const promise = loadStripe("pk_test_51LaomoBX9LWjlI5R7tWZI9DRwjEJQN4IOlB77LU8kIqYpiGQWK1bJJZbV8qdxauxJcH5ImKecW0hPqvDht3DEGap00kB96G7vN");
 function App() {
@@ -58,6 +59,7 @@ function App() {
             <Payment />
            </Elements>
           } />
+          <Route path='/orders' element={<Orders/>} />
         </Routes>
       </Router>
     </div>

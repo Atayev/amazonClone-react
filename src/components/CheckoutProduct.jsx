@@ -3,7 +3,7 @@ import { removeFromBasket } from './reducer'
 import { useDispatch } from 'react-redux'
 
 
-function CheckoutProduct({ id, title, image, price, rating }) {
+function CheckoutProduct({ id, title, image, price, rating,hideButton }) {
  
     const dispatch = useDispatch()
     const removeFrom = () => {
@@ -30,13 +30,16 @@ function CheckoutProduct({ id, title, image, price, rating }) {
                     <strong>{price}</strong>
                 </p>
                 <div className="checkoutProductRating">
-                    {Array(rating)
+                    {Array(rating) && Array(rating)
                         .fill()
                         .map((_,key) => (
                             <p key={key}>*</p>
                         ))}
                 </div>
-                <button onClick={removeFrom}>Remove from basket</button>
+                {!hideButton && (
+                    <button onClick={removeFrom}>Remove from basket</button>
+                )}
+                
             </div>
             </div>
     )
