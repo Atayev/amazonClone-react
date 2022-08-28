@@ -69,7 +69,8 @@ function Home() {
                      rating={5}
                   />
               </div>
-      </div>
+          </div>
+          
             </div>
           
     );
