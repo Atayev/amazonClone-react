@@ -26,13 +26,14 @@ function Payment() {
                 url:`payments/create?total=${getBasketTotal(state.basket)*100}`
             })
             setClientSecret(response.data.clientSecret)
-            
-        }
+        }   
         getClientSecret()
     }, [state.basket])
+
     const handleSubmit = async( event) => {
         event.preventDefault()
         setProcessing(true)
+        console.log(clientSecret)
         const payload = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card:elements.getElement(CardElement)
@@ -47,13 +48,18 @@ function Payment() {
                     amount: paymentIntent.amount,
                     created:paymentIntent.created
                 })
+            dispatch(
+                emptyBasket({
+                    basket:[]
+                })
+            )
             setSucceeded(true)
             setError(null)
             setProcessing(false)
             navigate("/orders", { replace: true });
         })
 
-        // const payload = await stripe 
+        
     }
     const handleChange = event => {
         setDisabled(event.empty)
@@ -103,7 +109,7 @@ function Payment() {
                           <CardElement onChange={handleChange} />
                           <div className='paymentPriceContainer'>
                           <strong>Order Total:
-                                  ${state.basket.reduce((total, item) => Math.round((total + Number(item.price)) * 100) / 100, 0)}</strong>
+                                  ${getBasketTotal(state.basket)}</strong>
                               <button disabled={processing || disabled || succeeded}>
                                   <span>
                                       {processing ? <p>Processing</p> : "Buy Now"}

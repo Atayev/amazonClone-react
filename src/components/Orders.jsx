@@ -26,7 +26,7 @@ function Orders() {
       <div className='orders'>
           <h1>Your Orders</h1>
           <div className="ordersItem">
-              {orders?.map(order => <Order order={order}/>)}
+              {orders?.map((order,key) => <Order key={key} order={order}/>)}
           </div>
     </div>
   )

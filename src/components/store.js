@@ -3,6 +3,9 @@ import basketReducer from './reducer'
 export const store = configureStore({
     reducer: {
         basket: basketReducer,
-        
     },
+    middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    })
 });

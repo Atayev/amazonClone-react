@@ -1,19 +1,22 @@
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { useSelector,useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom'
-import {setUser} from './reducer'
-
+import { Link,useNavigate } from 'react-router-dom'
+import { auth } from '../firebase';
+import { setUser } from './reducer'
+import {toast} from 'react-toastify'
 function Header() {
    
     const state = useSelector(state => state.basket)
     const dispatch = useDispatch()
-    
+    const navigate = useNavigate()
   const logout = () => {
-    dispatch(
+    auth.signOut()
+    dispatch( 
       setUser({
         user:null
       }))
+    toast.success('Successfully signed out')
   } 
   return (
     <div className="header">
@@ -27,32 +30,22 @@ function Header() {
                 <SearchIcon className='header-searchIcon'/>
             </div>
             <div className="header-nav">
-        {!state.user ?
-          ( 
-            <Link to='/login'>
+            <Link to={!state.user ? '/login' : '/'}>
             <div className="header-option">
-              <span className="header-fline">Hello Guest</span>
-              <span className="header-sline">Sign IN</span>
+              <span className="header-fline">Hello {!state.user ? 'Guest' : state.user.email }</span>
+              <span className="header-sline" onClick={!state.user ? null : logout}>{!state.user ? 'Sign In' : 'Sign Out' }</span>
             </div>
             </Link>
-          ) :
-          (
-            <div className="header-option">
-              <span className="header-fline">Hello {!state.user ? 'Guest' : state.user.email}</span>
-              <span onClick={logout} className="header-sline">Sign Out</span>
-            </div>
-          )
-        }
                 <div className="header-option">
           <span className="header-fline">Returns</span>
-              <Link to='/orders' style={{textDecoration:'none', color:'white'}}>
+          <Link to='/orders' style={{ textDecoration: 'none', color: 'white', padding: 0, margin: 0}}>
                 <span className="header-sline">Orders</span>
                 </Link>
                     </div>
                 <div className="header-option">
-                <span className="header-fline">Yourt</span>
+                    <span className="header-fline">Your</span>
                     <span className="header-sline">Prime</span>
-                    </div>
+                </div>
           </div>
           <Link to='/checkout'>
           <div className="header-basket">

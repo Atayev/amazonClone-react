@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import {addToBasket} from './reducer'
+import { addToBasket } from './reducer'
+import StarRateOutlinedIcon from '@mui/icons-material/StarRateOutlined';
 function Product({ id, title, image, price, rating }) {
   
   const dispatch = useDispatch()
@@ -31,7 +32,7 @@ function Product({ id, title, image, price, rating }) {
           {Array(rating)
             .fill()
             .map((_, i) => (
-             <p key={i}>*</p>
+             <StarRateOutlinedIcon key={i}/>
           ))}
         
       </div>

@@ -1,14 +1,12 @@
 import React from 'react'
 import Product from './Product';
+import Slider from './Slider';
 function Home() {
     return (
        
       <div className='home'>
           <div className="homeContainer">
-              <img src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
-                  alt=""
-                  className='homeImage'
-              />
+              <Slider />
               <div className='homeRow'>
                   <Product
                       id='453453453'
@@ -42,21 +40,21 @@ function Home() {
               <div className='homeRow'>
                   <Product
                      id='23424234'
-                     title={'Instant Vortex Plus 6-Quart Air Fryer Oven, From the Makers of Instant Pot with ClearCook Cooking Window, Digital Touchscreen, App with over 100 Recipes, Single Basket, Black'}
+                     title={'Instant Vortex Plus 6-Quart Air Fryer Oven, From the Makers of Instant Pot with ClearCook Cooking Window'}
                      image={'https://m.media-amazon.com/images/I/71VgHp7sgEL._AC_SX679_.jpg'}
                      price={85}
                      rating={5}
                   />
                   <Product
                      id='32525235' 
-                     title={'Seagate Portable 2TB External Hard Drive Portable HDD - USB 3.0 for PC, Mac, PlayStation, & Xbox - 1-Year Rescue Service (STGX2000400)'}
+                     title={'Seagate Portable 2TB External Hard Drive '}
                      image={'https://m.media-amazon.com/images/I/81tjLksKixL._AC_SX679_.jpg'}
                      price={29.99}
                      rating={5}
                   />
                   <Product
                      id='32143241' 
-                     title={'Matein Travel Laptop Backpack, Business Anti Theft Slim Durable Laptops Backpack with USB Charging Port, Water Resistant College School Computer Bag Gifts for Men & Women Fits 15.6 Inch Notebook, Grey'}
+                     title={'Matein Travel Laptop Backpack Grey'}
                      image={'https://m.media-amazon.com/images/I/81OFxhFWmML._AC_SY450_.jpg'}
                      price={56.99}
                      rating={5}

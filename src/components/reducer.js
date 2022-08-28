@@ -25,7 +25,7 @@ export const basketSlice = createSlice({
         emptyBasket: (state, action) => {
             return {
                 ...state,
-                basket:action.payload
+                basket:action.payload.basket
             }
         },
         removeFromBasket: (state, action) => {
