@@ -89,6 +89,18 @@ code {
 }
 
 
+.homeContainer > button {
+  background: #f0c14b;
+  border: 1px solid;
+  margin: 10px;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 30px;
+  font-weight: bolder;
+}
+
 .homeImage {
   width: 100%;
   z-index: -1;
@@ -423,13 +435,17 @@ code {
 }
 .footerNav {
   display: flex;
-  color: white;
+  color: #ddd8b9;
   display: flex;
   justify-content: center;
-  margin:10px 0 0 10px;
+  margin:20px 0 0 10px;
+
+}
+.fSecondNav {
+  border-top: .1px solid #3a4553;
 }
 .footerNavS {
-  margin: 10px;
+  margin: 20px;
   cursor: pointer;
 }
 .footerNavS >h4 {
@@ -458,13 +474,13 @@ code {
   flex-wrap: wrap;
 }
 .dollarSign,.country {
-  width: 120px;
-  height: 30px;
-  border: 1px solid white;
+  width: 150px;
+  height: 15px;
+  border: 1px solid #848688;
   padding: 10px;
   margin: 5px;
   text-align: center;
-  color: white;
+  color: #ccc0a3;
 }
 .footerNavBig {
   background: #131a22;
@@ -517,6 +533,25 @@ code {
 }
 .endFoot>span:hover {
 text-decoration: underline;
+}
+
+.productSell {
+  margin: 15px;
+  padding: 15px;
+}
+.productSell>h3 {
+  margin-bottom: 25px;
+}
+.productSellInfo > form {
+  display: flex;
+  flex-direction: column;
+}
+.productSellInfo > form>input { 
+  width: 30%;
+  margin-bottom: 10px;
+}
+.productSellInfo > label {
+  font:bold .3em;
 }
 @keyframes slideOutUp {
   0% {

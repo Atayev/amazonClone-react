@@ -58,7 +58,7 @@ function Footer() {
               </div>
               
           </div>
-          <hr />
+          
               <div className="fSecondNav">
                 <div className='footerOptions'>
                 <img 
@@ -218,14 +218,6 @@ function Footer() {
                               <span>Book reviews & recommendations</span>
                           </a>
                       </td>
-                      <td className='navTableItem'>
-                          <a href="">
-                            Fabric
-                              <br />
-                              <span>Sewing, Quilting & Knitting</span>
-                          </a>
-                      </td>
-                      
                   </tr>
               </table>
               <div className='endFoot'>

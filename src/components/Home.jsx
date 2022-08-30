@@ -1,7 +1,38 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import Product from './Product';
 import Slider from './Slider';
+import { useNavigate, useParams } from 'react-router-dom'
+// import { db} from '../firebase'
+// import { getDocs, doc, collection, query, where, orderBy, limit} from 'firebase/firestore'
+
 function Home() {
+   const navigate = useNavigate()
+   // const params = useParams()
+   // const [products, setProducts] = useState(null)
+   // useEffect(() => {
+   //    const fetchProducts = async (id) => {
+   //       const productRef = collection(db, 'products')
+         
+   //       const q = query(
+   //          productRef,
+   //          where('type', '==', params.productId),
+   //          orderBy('timestamp', 'desc'),
+   //          limit(10)
+   //       )
+   //          const products =[]
+   //       const querySnap = await getDocs(q)
+   //       querySnap.forEach((doc) => {
+   //          return products.push({
+   //             id: doc.id,
+   //             data:doc.data()
+   //             })
+   //       })
+   //       setProducts(products)
+
+   //    }
+   //    fetchProducts()
+   // },[navigate])
+   // console.log(products)
     return (
        
       <div className='home'>
@@ -68,7 +99,8 @@ function Home() {
                      price={1387}
                      rating={5}
                   />
-              </div>
+             </div>
+             <button onClick={()=>navigate('/product-sell')}>Sell your Product</button>
           </div>
           
             </div>
