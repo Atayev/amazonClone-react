@@ -4,7 +4,6 @@ import { getBasketTotal } from "./reducer";
 function Subtotal() {
   const state = useSelector(state => state.basket)
   const navigate = useNavigate()
-  
   return (
       <div className='subtotal'>
           <>

@@ -1,5 +1,4 @@
 import React from 'react'
-import LanguageIcon from '@mui/icons-material/Language';
 function Footer() {
     const scrollTop = () =>{
         window.scrollTo({top: 0, behavior: 'smooth'});
@@ -63,7 +62,7 @@ function Footer() {
                 <div className='footerOptions'>
                 <img 
                         className="header-logo"
-                      src='http://pngimg.com/uploads/amazon/amazon_PNG11.png' alt="" />
+                      src='http://pngimg.com/uploads/amazon/amazon_PNG11.png' alt="/" />
                   <div className='dollarSign'>$ USD- U.S.Dollar</div>
                   <div className='country'>🇺🇸 United States</div>
                 </div>
@@ -72,35 +71,35 @@ function Footer() {
               <table className='nav'>
                   <tr>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                               Amazon Music
                               <br />
                               <span>Stream millions</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                                 Sell on Amazon
                               <br />
                               <span>Start a Selling Account</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                             Amazon Advertising
                               <br />
                               <span>Find, attract, and engage customers</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                             6pm
                               <br />
                                 <span>Score dealson fashion brands</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                                 AbeBooks
                               <br />
                               <span>Books, art & collectibles</span>
@@ -109,35 +108,35 @@ function Footer() {
                   </tr>
                   <tr>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                                 Amazon Business
                               <br />
                                 <span>Everything For Your Business</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                             AmazonGlobal
                               <br />
                               <span>Ship Orders Internationally</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                           Amazon Ignite
                               <br />
                               <span>Sell your original Digital Educational Resources	</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                               Amazon Music
                               <br />
                               <span>Stream millions</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                             Fabric
                               <br />
                               <span>Sewing, Quilting & Knitting</span>
@@ -146,21 +145,21 @@ function Footer() {
                   </tr>
                   <tr>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                             Woot!
                               <br />
                               <span>Deals and Shenanigans</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                             eero WiFi
                               <br />
                               <span>Stream 4K Video in Every Room</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                               Blink
                               <br />
                               <span>Smart Security for Every Home
@@ -168,14 +167,14 @@ function Footer() {
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                              Neighbors App
                               <br />
                               <span>Real-Time Crime & Safety Alerts</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                                 Amazon Subscription Boxes	 
                               <br />
                               <span>Top subscription boxes – right to your door	PillPack Pharmacy Simplified	</span>
@@ -184,35 +183,35 @@ function Footer() {
                   </tr>
                   <tr>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                              Ring
                               <br />
                               <span>Smart Home Security Systems</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                             IMDb
                               <br />
                               <span>Movies, TV & Celebrities</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                                  Prime Video Direct
                               <br />
                               <span>Video Distribution Made Easy</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                             ComiXology
                               <br />
                               <span>Thousands of Digital Comics</span>
                           </a>
                       </td>
                       <td className='navTableItem'>
-                          <a href="">
+                          <a href="/">
                              Goodreads
                               <br />
                               <span>Book reviews & recommendations</span>

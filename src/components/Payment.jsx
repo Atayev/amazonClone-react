@@ -9,6 +9,7 @@ import {emptyBasket} from '../components/reducer'
 import axios from '../axios'
 function Payment() {
     const state = useSelector(state => state.basket)
+    console.log(state.basket)
     const stripe = useStripe()
     const elements = useElements()
     const navigate = useNavigate()
@@ -30,15 +31,17 @@ function Payment() {
         getClientSecret()
     }, [state.basket])
 
-    const handleSubmit = async( event) => {
+    const handleSubmit = async(event) => {
         event.preventDefault()
         setProcessing(true)
         console.log(clientSecret)
+        // eslint-disable-next-line
         const payload = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card:elements.getElement(CardElement)
             }
         }).then(({ paymentIntent }) => {
+            console.log(paymentIntent.id,paymentIntent.amount)
             db.collection('users')
                 .doc(state.user?.uid)
                 .collection('orders')
@@ -58,8 +61,6 @@ function Payment() {
             setProcessing(false)
             navigate("/orders", { replace: true });
         })
-
-        
     }
     const handleChange = event => {
         setDisabled(event.empty)

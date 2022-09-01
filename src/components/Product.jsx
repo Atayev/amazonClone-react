@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { addToBasket } from './reducer'
 import StarRateOutlinedIcon from '@mui/icons-material/StarRateOutlined';
-function Product({ id, title, image, price, rating }) {
+function Product({ id,category, title, image, price, rating }) {
   
   const dispatch = useDispatch()
 
@@ -22,7 +22,8 @@ function Product({ id, title, image, price, rating }) {
   }
   return (
     <div className="product">
-    <div className="productInfo">
+      <div className="productInfo">
+        <p className='productCategory'>{ category }</p>
       <p>{title}</p>
       <p className="productPrice">
         <small>$</small>

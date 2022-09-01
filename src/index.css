@@ -155,9 +155,10 @@ code {
 }
 .product:hover {
   border: 2px solid #f0c14b;
-  animation: slideOutUp 1s 0.1s ease-out;
 }
-
+.productCategory {
+  display: none;
+}
 .productPrice {
   margin-top: 5px;
 }

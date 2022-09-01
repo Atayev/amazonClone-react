@@ -1,10 +1,8 @@
 import React from 'react'
 import moment from 'moment';
 import CheckoutProduct from './CheckoutProduct';
-import { useSelector } from 'react-redux'
 import { getBasketTotal } from "./reducer";
 function Order({ order }) {
-    const state = useSelector(state => state.basket)
   return (
       <div className='order'>
           <h2>Order</h2>

@@ -44,8 +44,6 @@ function App() {
   
   return (
     <div className="App">
-      
-          
        <ToastContainer />
       <Router>
         <Header />

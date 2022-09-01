@@ -13,14 +13,15 @@ import { v4 as uuidv4 } from 'uuid'
 import {useNavigate} from 'react-router-dom'
 
 function ProductSell() {
+    // eslint-disable-next-line
     const [loading, setLoading] = useState(false)
-    const [error,setError] = useState('')
     const [formData, setFormData] = useState({
+        category:'',
         name: '',
         price: 0,   
         images:{}
     })
-    const { name, price, images } = formData
+    const { category,name, price, images } = formData
     const auth = getAuth()
     const isMounted = useRef(true)
     const navigate = useNavigate()
@@ -93,7 +94,7 @@ function ProductSell() {
             timestamp:serverTimestamp()
         }
         delete formDataCopy.images
-
+        // eslint-disable-next-line
         const docRef = await addDoc(collection(db,'products'),formDataCopy)
                 toast.success('Products added')
 
@@ -131,10 +132,12 @@ function ProductSell() {
                   <label className='productLabel'>Name of Product</label>
                   <input type="text" id="name" onChange={onMutate} value={ name } />
                   <label className='productLabel'>Price</label>
-                  <input type="number" id="price" onChange={onMutate} value={ price }/>
+                  <input type="number" id="price" onChange={onMutate} value={price} />
+                  <label className="productLabel">Category</label>
+                  <input type="text" id="category" value={ category } onChange={onMutate} />
                   <label className='productLabel'>Product images</label>
                   <input type="file" id="images"
-                        accept='.jpg,.png,.jpeg'
+                        accept='.jpg,.png,.jpeg,.webp'
                         multiple
                         required
                         onChange={onMutate} />  

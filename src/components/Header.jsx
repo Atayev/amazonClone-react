@@ -1,7 +1,7 @@
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { useSelector,useDispatch } from 'react-redux';
-import { Link,useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { auth } from '../firebase';
 import { setUser } from './reducer'
 import {toast} from 'react-toastify'
@@ -9,7 +9,6 @@ function Header() {
    
     const state = useSelector(state => state.basket)
     const dispatch = useDispatch()
-    const navigate = useNavigate()
   const logout = () => {
     auth.signOut()
     dispatch( 
