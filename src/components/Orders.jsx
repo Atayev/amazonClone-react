@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from 'react'
-import { db } from '../firebase'
+import { db,auth } from '../firebase'
 import { useSelector } from 'react-redux'
 import Order from './Order'
 function Orders() {
@@ -22,7 +22,16 @@ function Orders() {
         }
         else setOrders([])
         // eslint-disable-next-line
-    },[])
+    }, [])
+    if (!auth.currentUser) {
+        return (
+            <div className='orders'>
+                <h1>Your Orders</h1>
+                <p>You need to sign in to see your orders</p>
+            </div>
+         
+        )
+      }
   return (
       <div className='orders'>
           <h1>Your Orders</h1>

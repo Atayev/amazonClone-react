@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { getBasketTotal } from "./reducer";
+import {auth} from '../firebase'
 function Subtotal() {
   const state = useSelector(state => state.basket)
   const navigate = useNavigate()
@@ -14,8 +15,13 @@ function Subtotal() {
                   <input type="checkbox" />
                   This order contains a gift
               </small>
-          </>
-          <button onClick={e=>navigate('/payment')}>Proceed to checkout</button>
+      </>
+      {
+        !auth.currentUser ? 'You need to sign in to proceed to checkout': <button  onClick={e=>navigate('/payment')}>Proceed to checkout</button>
+      }
+        
+      
+          
     </div>
   )
 }

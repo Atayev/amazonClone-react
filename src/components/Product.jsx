@@ -2,9 +2,11 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { addToBasket } from './reducer'
 import StarRateOutlinedIcon from '@mui/icons-material/StarRateOutlined';
+import { useNavigate } from 'react-router-dom'
+
 function Product({ id,category, title, image, price, rating }) {
-  
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const addTo = () => {
     dispatch(
@@ -15,14 +17,14 @@ function Product({ id,category, title, image, price, rating }) {
             id: id,
             title: title,
             image: image,
-            price: JSON.stringify(price),
-            rating: JSON.stringify(rating)
+            price: price,
+            rating: rating
         }
     }))
   }
   return (
     <div className="product">
-      <div className="productInfo">
+      <div className="productInfo" onClick={()=>navigate(`/product-item/${id}`)}>
         <p className='productCategory'>{ category }</p>
       <p>{title}</p>
       <p className="productPrice">
@@ -41,7 +43,7 @@ function Product({ id,category, title, image, price, rating }) {
 
     <img src={image} alt="" />
 
-    <button onClick={()=>addTo()}>Add to Basket</button>
+    <button onClick={()=>addTo()}>Add to Card</button>
   </div>)
 }
 

@@ -69,6 +69,7 @@ function Footer() {
           </div>
           <div className='footerNavBig'>
               <table className='nav'>
+                  <tbody>
                   <tr>
                       <td className='navTableItem'>
                           <a href="/">
@@ -217,7 +218,8 @@ function Footer() {
                               <span>Book reviews & recommendations</span>
                           </a>
                       </td>
-                  </tr>
+                      </tr>
+                      </tbody>
               </table>
               <div className='endFoot'>
                   <span>Condition of Use</span>

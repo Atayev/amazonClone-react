@@ -18,6 +18,7 @@ import Orders from './components/Orders';
 import Profile from './components/Profile';
 import Footer from './components/Footer';
 import ProductSell from './components/ProductSell';
+import ProductItem from './components/ProductItem';
 const promise = loadStripe("pk_test_51LaomoBX9LWjlI5R7tWZI9DRwjEJQN4IOlB77LU8kIqYpiGQWK1bJJZbV8qdxauxJcH5ImKecW0hPqvDht3DEGap00kB96G7vN");
 function App() {
       const dispatch = useDispatch()
@@ -59,7 +60,8 @@ function App() {
           } />
           <Route path='/orders' element={<Orders />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/product-sell' element={<ProductSell />}/>
+          <Route path='/product-sell' element={<ProductSell />} />
+          <Route path='/product-item/:productId' element={<ProductItem /> } />
         </Routes>
         <Footer />
       </Router>

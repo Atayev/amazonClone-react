@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 
 export const getBasketTotal = (basket) => 
-  basket?.reduce((amount, item) => +item.price + amount, 0);
+  basket?.reduce((amount, item) => Number(item.price) + amount, 0);
 const initialState = {
     basket: [],
     user:null,

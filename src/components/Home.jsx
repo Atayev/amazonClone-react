@@ -7,18 +7,18 @@ import { db } from '../firebase'
 import { getDocs, collection} from 'firebase/firestore'
 
 function Home() {
-   const navigate = useNavigate()
-   const state = useSelector(state => state.basket)
-   const [products, setProducts] = useState([])
-   useEffect(() => {
-      const fetchProducts = async (id) => {
-         const productRef = collection(db, 'products')
-         const productSnap =await getDocs(productRef)
-         const prodc = []
-         productSnap.forEach((product) => prodc.push(product.data()))
-         setProducts(prodc)
-      }
-      fetchProducts()
+  const navigate = useNavigate()
+  const state = useSelector(state => state.basket)
+  const [products, setProducts] = useState([])
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const productRef = collection(db, 'products')
+      const productSnap = await getDocs(productRef)
+      const prodc = []
+      productSnap.forEach((product) => prodc.push({...product.data(),id:product.id}))
+      setProducts(prodc)
+    }
+     fetchProducts()
    }, [navigate])
 
     return (
@@ -30,7 +30,7 @@ function Home() {
                 {products.map((product,key) => { if(product.category==='book'){
                      return ( <Product
                    category={product.category}
-                   id={product.userRef}
+                   id={product.id}
                    title={product.name}
                    image={product.imgUrls}
                    price={product.price}
@@ -45,7 +45,7 @@ function Home() {
               {products.map((product,key) => { if(product.category==='electronics' || product.category==='other'){
                      return ( <Product
                    category={product.category}
-                   id={product.userRef}
+                   id={product.id}
                    title={product.name}
                    image={product.imgUrls}
                    price={product.price}
@@ -60,7 +60,7 @@ function Home() {
               {products.map((product,key) => { if(product.category==='bigelectronics'){
                      return ( <Product
                    category={product.category}
-                   id={product.userRef}
+                   id={product.id}
                    title={product.name}
                    image={product.imgUrls}
                    price={product.price}

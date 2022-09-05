@@ -97,7 +97,7 @@ function ProductSell() {
         // eslint-disable-next-line
         const docRef = await addDoc(collection(db,'products'),formDataCopy)
                 toast.success('Products added')
-
+                navigate(`/product-item/${docRef.id}`)
     }
     const onMutate=(e)=>{
         let boolean = null
