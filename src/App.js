@@ -15,7 +15,6 @@ import Payment from './components/Payment';
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
 import Orders from './components/Orders';
-import Profile from './components/Profile';
 import Footer from './components/Footer';
 import ProductSell from './components/ProductSell';
 import ProductItem from './components/ProductItem';
@@ -59,7 +58,6 @@ function App() {
            </Elements>
           } />
           <Route path='/orders' element={<Orders />} />
-          <Route path='/profile' element={<Profile />} />
           <Route path='/product-sell' element={<ProductSell />} />
           <Route path='/product-item/:productId' element={<ProductItem /> } />
         </Routes>
