@@ -7,8 +7,8 @@ import { setUser } from './reducer'
 import {toast} from 'react-toastify'
 function Header() {
    
-    const state = useSelector(state => state.basket)
-    const dispatch = useDispatch()
+  const state = useSelector(state => state.basket)
+  const dispatch = useDispatch()
   const logout = () => {
     auth.signOut()
     dispatch( 

@@ -80,8 +80,8 @@ function Payment() {
                   </div>
                   <div className="paymentAddress">
                       <p>{state.user?.email}</p>
-                      <p>lorem</p>
-                      <p>lorem2rrr</p>
+                      <p>Adress 1</p>
+                      <p>Adress 2</p>
                   </div>
               </div>
               <div className="paymentSection">
