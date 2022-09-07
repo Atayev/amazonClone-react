@@ -52,7 +52,7 @@ function App() {
           <Route path='/checkout' element={<Checkout />}/>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/payment' element={ 
+          <Route path='/payments' element={ 
             <Elements stripe={promise}>
             <Payment />
            </Elements>

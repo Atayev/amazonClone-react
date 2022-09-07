@@ -17,7 +17,7 @@ function Subtotal() {
               </small>
       </>
       {
-        !auth.currentUser ? 'You need to sign in to proceed to checkout': <button  onClick={e=>navigate('/payment')}>Proceed to checkout</button>
+        !auth.currentUser ? 'You need to sign in to proceed to checkout': <button  onClick={e=>navigate('/payments')}>Proceed to checkout</button>
       }
         
       

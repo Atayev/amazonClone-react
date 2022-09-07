@@ -9,10 +9,6 @@ const stripe = require("stripe")("sk_test_51LaomoBX9LWjlI5RA3AhbVIjtfQYjIeqWQHFH
 const app = express();
 app.use(cors({ origin: true }));
 app.use(express.json());
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-    next();
-    });
 
 app.post('/payments/create', async (request, response) => {
     const total = request.query.total;
